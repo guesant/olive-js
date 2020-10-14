@@ -16,6 +16,10 @@ export class Node<
   constructor() {
     return this;
   }
+  setNode(node: Node<A, I>["_node"]) {
+    this._node = node;
+    return this;
+  }
   push(...nodes: Node<A, I>["_inner"]) {
     return this._inner.push(...([nodes] as any).flat(Infinity));
   }

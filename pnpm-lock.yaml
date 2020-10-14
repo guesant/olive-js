@@ -1,11 +1,25 @@
 importers:
-  packages/core:
+  packages/0.1.x:
+    dependencies:
+      "@olive-js/core": "link:../core"
     devDependencies:
-      '@types/node': 14.11.5
+      "@types/node": 14.11.5
+      ts-node: 9.0.0_typescript@4.0.3
       tslib: 2.0.2
       typescript: 4.0.3
     specifiers:
-      '@types/node': ^14.11.5
+      "@olive-js/core": "link:../core"
+      "@types/node": ^14.11.5
+      ts-node: ^9.0.0
+      tslib: ^2.0.2
+      typescript: ^4.0.3
+  packages/core:
+    devDependencies:
+      "@types/node": 14.11.5
+      tslib: 2.0.2
+      typescript: 4.0.3
+    specifiers:
+      "@types/node": ^14.11.5
       tslib: ^2.0.2
       typescript: ^4.0.3
 lockfileVersion: 5.1
@@ -25,7 +39,7 @@ packages:
   /diff/4.0.2:
     dev: true
     engines:
-      node: '>=0.3.1'
+      node: ">=0.3.1"
     resolution:
       integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
   /make-error/1.3.6:
@@ -42,7 +56,7 @@ packages:
   /source-map/0.6.1:
     dev: true
     engines:
-      node: '>=0.10.0'
+      node: ">=0.10.0"
     resolution:
       integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
   /ts-node/9.0.0_typescript@4.0.3:
@@ -55,10 +69,10 @@ packages:
       yn: 3.1.1
     dev: true
     engines:
-      node: '>=10.0.0'
+      node: ">=10.0.0"
     hasBin: true
     peerDependencies:
-      typescript: '>=2.7'
+      typescript: ">=2.7"
     resolution:
       integrity: sha512-/TqB4SnererCDR/vb4S/QvSZvzQMJN8daAslg7MeaiHvD8rDZsSfXmNeNumyZZzMned72Xoq/isQljYSt8Ynfg==
   /tslib/2.0.2:
@@ -68,13 +82,13 @@ packages:
   /typescript/4.0.3:
     dev: true
     engines:
-      node: '>=4.2.0'
+      node: ">=4.2.0"
     hasBin: true
     resolution:
       integrity: sha512-tEu6DGxGgRJPb/mVPIZ48e69xCn2yRmCgYmDugAVwmJ6o+0u1RI18eO7E7WBTLYLaEVVOhwQmcdhQHweux/WPg==
   /yn/3.1.1:
     dev: true
     engines:
-      node: '>=6'
+      node: ">=6"
     resolution:
       integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==

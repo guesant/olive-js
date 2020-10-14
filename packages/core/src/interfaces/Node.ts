@@ -6,3 +6,14 @@ export interface NodeProps {
 
 export type NodeChildren = Recursive<any>;
 
+export class Node<
+  A extends NodeProps = NodeProps,
+  I extends Recursive<any> = NodeChildren
+> {
+  _node: string = "";
+  _attribs = {} as A;
+  _inner = [] as I[];
+  constructor() {
+    return this;
+  }
+}

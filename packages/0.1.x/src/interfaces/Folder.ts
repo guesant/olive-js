@@ -1,3 +1,4 @@
+import { ExtendedNumber } from "@olive-js/core/lib/interfaces/ExtendedNumber";
 import {
   Node,
   NodeChildren,
@@ -5,6 +6,9 @@ import {
 } from "@olive-js/core/lib/interfaces/Node";
 
 export interface FolderProps extends NodeProps {
+  name: string;
+  id: ExtendedNumber;
+  parent: ExtendedNumber;
 }
 
 export type FolderNode = Node<FolderProps>;

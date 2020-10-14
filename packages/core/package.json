@@ -5,7 +5,7 @@
     "clean": "rm -rf lib",
     "build": "tsc -p .",
     "watch": "tsc -p . --watch",
-    "prepare": "pnpm install && pnpm build"
+    "prepare": "pnpm build"
   },
   "author": "Gabriel Rodrigues",
   "license": "MIT",

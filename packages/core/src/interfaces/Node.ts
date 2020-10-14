@@ -20,6 +20,10 @@ export class Node<
     this._node = node;
     return this;
   }
+  setInner(inner: Node<A, I>["_inner"]) {
+    this._inner = inner.flat(Infinity) as any;
+    return this;
+  }
   push(...nodes: Node<A, I>["_inner"]) {
     return this._inner.push(...([nodes] as any).flat(Infinity));
   }

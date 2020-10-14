@@ -16,4 +16,7 @@ export class Node<
   constructor() {
     return this;
   }
+  clone() {
+    return new Node(this._node, this._attribs, this._inner);
+  }
 }

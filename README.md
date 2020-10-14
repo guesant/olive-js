@@ -1,6 +1,6 @@
 # olive-js
 
-Javascript bindings for Olive Video Editor
+Javascript bindings for the Olive Video Editor
 
 ## Requirements
 
@@ -8,6 +8,9 @@ Please ensure that you have NodeJS and pnpm installed.
 
 ```sh
 node -v
+```
+
+```sh
 npm i -g pnpm
 ```
 

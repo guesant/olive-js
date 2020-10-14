@@ -30,6 +30,33 @@ $ npm install path-to-olive/packages/0.1.x
 
 Remember to replace `path-to-olive` with the result of the `pwd` command executed above.
 
+## Usage
+
+```ts
+import { Audio } from "@olive-js/0.1.x/lib/interfaces/Audio";
+import { Folders } from "@olive-js/0.1.x/lib/interfaces/Folders";
+import { Footage } from "@olive-js/0.1.x/lib/interfaces/Footage";
+import { Media } from "@olive-js/0.1.x/lib/interfaces/Media";
+import { Project } from "@olive-js/0.1.x/lib/interfaces/Project";
+import { Sequences } from "@olive-js/0.1.x/lib/interfaces/Sequences";
+import { URL } from "@olive-js/0.1.x/lib/interfaces/URL";
+import { Version } from "@olive-js/0.1.x/lib/interfaces/Version";
+import { Video } from "@olive-js/0.1.x/lib/interfaces/Video";
+
+Project()
+  .add(Version("190219"))
+  .add(URL("/home/user/project.ove"))
+  .add(Folders())
+  .add(Media().add(Footage().add(Video()).add(Audio())))
+  .add(Sequences());
+```
+
+You can use the `nodeToXML` helper to generate your XML string.
+
+```ts
+import { nodeToXML } from "@olive-js/0.1.x/lib/helpers/node-to-xml";
+console.log(nodeToXML(Project(...)))
+```
 
 ---
 

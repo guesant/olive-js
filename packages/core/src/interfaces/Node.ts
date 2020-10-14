@@ -37,6 +37,14 @@ export class Node<
     }
     return this;
   }
+  setIfNotDefined(attribs: Optional<this["_attribs"]>) {
+    for (const key in attribs) {
+      hasOwnProperty(attribs, key) &&
+        !hasOwnProperty(this["_attribs"], key) &&
+        this.set(key, (attribs as any)[key]);
+    }
+    return this;
+  }
   setNode(node: Node<A, I>["_node"]) {
     this._node = node;
     return this;

@@ -15,8 +15,12 @@ export class Node<
   _node: string = "";
   _attribs = {} as A;
   _inner = [] as I[];
-  constructor(node: Node<any, any>["_node"] = "") {
+  constructor(
+    node: Node<any, any>["_node"] = "",
+    attribs?: Node<A, any>["_attribs"],
+  ) {
     node && this.setNode(node);
+    typeof attribs !== "undefined" && this.set(attribs);
     return this;
   }
   set(object: Optional<this["_attribs"]>): this;

@@ -1,3 +1,5 @@
+import { hasOwnProperty } from "../helpers/has-own-property";
+import { Optional } from "./Optional";
 import { Recursive } from "./Recursive";
 
 export interface NodeProps {
@@ -14,6 +16,25 @@ export class Node<
   _attribs = {} as A;
   _inner = [] as I[];
   constructor() {
+    return this;
+  }
+  set(object: Optional<this["_attribs"]>): this;
+  set<K extends keyof A, V extends A[K]>(key: K, value: V): this;
+  set() {
+    if (arguments.length === 1) {
+      if (typeof arguments[0] === "object") {
+        const object = arguments[0];
+        for (const key in object) {
+          hasOwnProperty(object, key) && this.set(key, object[key]);
+        }
+      }
+    } else if (arguments.length === 2) {
+      if (typeof arguments[0] === "string") {
+        const key = arguments[0];
+        const value = arguments[1];
+        (this._attribs as any)[key] = value;
+      }
+    }
     return this;
   }
   setNode(node: Node<A, I>["_node"]) {
